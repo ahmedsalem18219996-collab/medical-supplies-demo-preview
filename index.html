@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#082c35">
+<title>Life Medx | النسخة التجريبية المتصلة</title>
+<style>
+:root{font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:#e9f5f5;background:#071b23;font-size:15px}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top right,#14414b 0,transparent 48%),#071b23}
+a{color:#93e4dd}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}
+.wrap{max-width:1240px;margin:0 auto;padding:22px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:23px;font-weight:800;letter-spacing:-.7px}.sub{color:#9ab8bb;font-size:12px}.pill{display:inline-block;padding:5px 10px;border:1px solid #24716f;border-radius:999px;font-size:12px;color:#97efe3;background:#10373e}
+.warning{color:#ffd49b;background:#3a2b1d;border:1px solid #665032;padding:12px 16px;border-radius:12px;margin:20px 0}
+.login{max-width:430px;margin:9vh auto 0}.panel,.card{background:#102b34;border:1px solid #28505a;border-radius:18px;padding:22px;box-shadow:0 8px 30px #0002}
+h1{font-size:24px;margin:10px 0 20px}h2{font-size:20px;margin:0 0 14px}p{line-height:1.8}
+.field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.field label{color:#afd3d5}
+input,select{color:#f4ffff;background:#09232c;border:1px solid #35606a;border-radius:10px;padding:12px;width:100%;min-width:0;outline-offset:2px}
+input:focus,select:focus{border-color:#45c8b5;outline:1px solid #45c8b5}input::placeholder{color:#8fa8a9}
+.btn{border:1px solid #3a6970;background:#163740;color:#e9ffff;border-radius:10px;padding:11px 16px;font-weight:650}
+.btn:hover{background:#1c4950}.btn.primary{background:#23a99c;color:#042c32;border-color:#23a99c}.btn.primary:hover{background:#4bd7c7}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.error{color:#ffd8d0;background:#522923;border:1px solid #94483d;padding:12px;border-radius:10px;margin:12px 0}
+.good{color:#a2f1c9;background:#164b3b;border:1px solid #216f57;padding:12px;border-radius:10px;margin:12px 0}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}nav button{border-radius:999px}
+nav button.active{background:#2bb6aa;color:#062d32;border-color:#2bb6aa}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}
+.card .num{font-size:30px;font-weight:850;display:block;margin:8px 0;color:#aaf8e7;font-variant-numeric:tabular-nums}
+.muted{color:#a1b9bc;font-size:13px}.panel{margin-bottom:16px}
+.tablewrap{overflow:auto;border:1px solid #2d5660;border-radius:12px;margin-top:12px}table{width:100%;border-collapse:collapse;min-width:550px;text-align:right}
+th,td{padding:11px 13px;border-bottom:1px solid #294951;white-space:nowrap}th{background:#14343c;color:#bedbdc;font-size:13px;font-weight:600}tr:last-child td{border-bottom:0}
+tr:hover td{background:#163841}td[data-alert="true"]{color:#ffb89d;font-weight:700}
+.controls{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}.controls input{max-width:330px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hidden{display:none!important}
+footer{color:#96afb3;text-align:center;padding:15px;font-size:12px}
+@media(max-width:760px){.wrap{padding:15px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid{grid-template-columns:1fr}.panel{padding:15px}.brand{font-size:19px}}
+@media(max-width:420px){.cards{grid-template-columns:1fr 1fr;gap:8px}.card{padding:13px}.card .num{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div><div class="brand">✚ Life Medx <span class="sub">/ DEMO</span></div><div class="sub">نظام المستلزمات الطبية — لوحة العرض المتصلة</div></div><div class="actions"><span class="pill">بيانات تجريبية · Supabase Cloud</span><span id="status" class="sub">جاري الفحص…</span></div></header>
+<div class="warning">هذه نسخة تجريبية بمنتجات وأسعار ومؤسسات وهمية، وليست سجلات الشركة الحقيقية. أي حركة تنفذها هنا تُحفظ في قاعدة بيانات الـDemo فقط.</div>
+<section id="login" class="login panel hidden">
+<h1>دخول مدير النسخة التجريبية</h1><p class="muted">استخدم الحساب الذي أنشأته في Supabase. لا تُدخل كلمة المرور في محادثة ChatGPT.</p>
+<form id="loginForm">
+<div class="field"><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" value="admin@example.test" autocomplete="username" required></div>
+<div class="field"><label for="password">كلمة المرور</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+<button id="loginBtn" class="btn primary" type="submit">تسجيل الدخول إلى البيانات الحقيقية</button>
+</form>
+<div id="loginError" role="alert"></div>
+</section>
+<section id="dashboard" class="hidden">
+<div class="actions"><span id="welcome" class="muted"></span><button id="refresh" class="btn">تحديث البيانات</button><button id="logout" class="btn">خروج</button></div>
+<nav id="tabs" aria-label="أقسام النظام"></nav>
+<div id="feedback" role="status"></div>
+<main id="content"></main>
+</section>
+<footer>Life Medx · نسخة للعرض والاختبار · الاتصال يتطلب صلاحية مدير نشط</footer>
+</div>
+<script type="module" src="assets/js/cloud-demo.js"></script>
+</body>
+</html>
