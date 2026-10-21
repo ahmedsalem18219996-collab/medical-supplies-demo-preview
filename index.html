@@ -1,64 +1,114 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#082c35">
-<title>Life Medx | النسخة التجريبية المتصلة</title>
-<style>
-:root{font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:#e9f5f5;background:#071b23;font-size:15px}
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top right,#14414b 0,transparent 48%),#071b23}
-a{color:#93e4dd}button,input,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}
-.wrap{max-width:1240px;margin:0 auto;padding:22px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.brand{font-size:23px;font-weight:800;letter-spacing:-.7px}.sub{color:#9ab8bb;font-size:12px}.pill{display:inline-block;padding:5px 10px;border:1px solid #24716f;border-radius:999px;font-size:12px;color:#97efe3;background:#10373e}
-.warning{color:#ffd49b;background:#3a2b1d;border:1px solid #665032;padding:12px 16px;border-radius:12px;margin:20px 0}
-.login{max-width:430px;margin:9vh auto 0}.panel,.card{background:#102b34;border:1px solid #28505a;border-radius:18px;padding:22px;box-shadow:0 8px 30px #0002}
-h1{font-size:24px;margin:10px 0 20px}h2{font-size:20px;margin:0 0 14px}p{line-height:1.8}
-.field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.field label{color:#afd3d5}
-input,select{color:#f4ffff;background:#09232c;border:1px solid #35606a;border-radius:10px;padding:12px;width:100%;min-width:0;outline-offset:2px}
-input:focus,select:focus{border-color:#45c8b5;outline:1px solid #45c8b5}input::placeholder{color:#8fa8a9}
-.btn{border:1px solid #3a6970;background:#163740;color:#e9ffff;border-radius:10px;padding:11px 16px;font-weight:650}
-.btn:hover{background:#1c4950}.btn.primary{background:#23a99c;color:#042c32;border-color:#23a99c}.btn.primary:hover{background:#4bd7c7}
-.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.error{color:#ffd8d0;background:#522923;border:1px solid #94483d;padding:12px;border-radius:10px;margin:12px 0}
-.good{color:#a2f1c9;background:#164b3b;border:1px solid #216f57;padding:12px;border-radius:10px;margin:12px 0}
-nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}nav button{border-radius:999px}
-nav button.active{background:#2bb6aa;color:#062d32;border-color:#2bb6aa}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}
-.card .num{font-size:30px;font-weight:850;display:block;margin:8px 0;color:#aaf8e7;font-variant-numeric:tabular-nums}
-.muted{color:#a1b9bc;font-size:13px}.panel{margin-bottom:16px}
-.tablewrap{overflow:auto;border:1px solid #2d5660;border-radius:12px;margin-top:12px}table{width:100%;border-collapse:collapse;min-width:550px;text-align:right}
-th,td{padding:11px 13px;border-bottom:1px solid #294951;white-space:nowrap}th{background:#14343c;color:#bedbdc;font-size:13px;font-weight:600}tr:last-child td{border-bottom:0}
-tr:hover td{background:#163841}td[data-alert="true"]{color:#ffb89d;font-weight:700}
-.controls{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}.controls input{max-width:330px}
-.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.hidden{display:none!important}
-footer{color:#96afb3;text-align:center;padding:15px;font-size:12px}
-@media(max-width:760px){.wrap{padding:15px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid{grid-template-columns:1fr}.panel{padding:15px}.brand{font-size:19px}}
-@media(max-width:420px){.cards{grid-template-columns:1fr 1fr;gap:8px}.card{padding:13px}.card .num{font-size:23px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#102f42">
+  <meta name="description" content="Life Medx — لوحة عرض تجريبية متصلة لمتابعة المخزون والمبيعات والعمليات">
+  <title>Life Medx | لوحة الإدارة التجريبية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cloud-demo.css">
 </head>
 <body>
-<div class="wrap">
-<header><div><div class="brand">✚ Life Medx <span class="sub">/ DEMO</span></div><div class="sub">نظام المستلزمات الطبية — لوحة العرض المتصلة</div></div><div class="actions"><span class="pill">بيانات تجريبية · Supabase Cloud</span><span id="status" class="sub">جاري الفحص…</span></div></header>
-<div class="warning">هذه نسخة تجريبية بمنتجات وأسعار ومؤسسات وهمية، وليست سجلات الشركة الحقيقية. أي حركة تنفذها هنا تُحفظ في قاعدة بيانات الـDemo فقط.</div>
-<section id="login" class="login panel hidden">
-<h1>دخول مدير النسخة التجريبية</h1><p class="muted">استخدم الحساب الذي أنشأته في Supabase. لا تُدخل كلمة المرور في محادثة ChatGPT.</p>
-<form id="loginForm">
-<div class="field"><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" value="admin@example.test" autocomplete="username" required></div>
-<div class="field"><label for="password">كلمة المرور</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
-<button id="loginBtn" class="btn primary" type="submit">تسجيل الدخول إلى البيانات الحقيقية</button>
-</form>
-<div id="loginError" role="alert"></div>
-</section>
-<section id="dashboard" class="hidden">
-<div class="actions"><span id="welcome" class="muted"></span><button id="refresh" class="btn">تحديث البيانات</button><button id="logout" class="btn">خروج</button></div>
-<nav id="tabs" aria-label="أقسام النظام"></nav>
-<div id="feedback" role="status"></div>
-<main id="content"></main>
-</section>
-<footer>Life Medx · نسخة للعرض والاختبار · الاتصال يتطلب صلاحية مدير نشط</footer>
+<div class="app-shell">
+  <aside id="sidebar" class="sidebar hidden" aria-label="قائمة أقسام النظام">
+    <div class="sidebar-top">
+      <div class="brand-icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
+          <rect x="1" y="1" width="30" height="30" rx="10" fill="#D8FBF4" fill-opacity=".13"/>
+          <path d="M16 7v18M7 16h18" stroke="#66E4D1" stroke-width="3" stroke-linecap="round"/>
+          <path d="M5.5 20h5l3-7 4 8 2.5-5H26" stroke="#F2FFFD" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-copy"><b>Life Medx</b><small>نظام إدارة المستلزمات الطبية</small></div>
+    </div>
+    <div class="nav-heading">مساحة العمل <span>DEMO</span></div>
+    <nav id="tabs" aria-label="التنقل بين أقسام النظام"></nav>
+    <div class="sidebar-bottom">
+      <span class="sidebar-bottom-icon" aria-hidden="true">✦</span>
+      <div><b>نسخة العرض الأولى</b><small>المخزون · المبيعات · العمليات</small></div>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header id="topbar" class="topbar hidden">
+      <div class="topbar-title">
+        <span class="eyebrow">LIFE MEDX <span class="sep">/</span> لوحة التحكم</span>
+        <h1 id="pageTitle">نظرة عامة</h1>
+      </div>
+      <div class="topbar-controls">
+        <span class="environment-pill"><span class="status-dot"></span> Demo Environment</span>
+        <span class="account-chip" title="مدير النسخة التجريبية"><span class="account-avatar">A</span> المدير</span>
+      </div>
+    </header>
+
+    <div class="main-inner">
+      <section id="login" class="login hidden" aria-labelledby="loginTitle">
+        <div class="login-visual" aria-hidden="true">
+          <div class="login-mark">✚</div>
+          <div class="login-lines"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="login-visual-content">
+            <span class="login-kicker">LIFE MEDX · CLOUD DEMO</span>
+            <h2>قرارات أدق.<br>مخزون أوضح.</h2>
+            <p>إدارة الأصناف والتشغيلات وأوامر البيع من مساحة عمل واحدة.</p>
+            <div class="login-feature">متصل ببيئة Supabase التجريبية</div>
+          </div>
+        </div>
+        <div class="login-panel">
+          <div class="mobile-brand"><span class="logo-plus">✚</span> Life Medx</div>
+          <span class="section-kicker">مرحباً بعودتك</span>
+          <h1 id="loginTitle">تسجيل دخول الإدارة</h1>
+          <p class="muted login-help">استخدم حساب المدير الذي أنشأته في Supabase لمشاهدة بيانات النسخة التجريبية.</p>
+          <form id="loginForm">
+            <div class="field"><label for="email">البريد الإلكتروني</label><input id="email" name="email" type="email" dir="ltr" value="admin@example.test" autocomplete="username" required></div>
+            <div class="field"><label for="password">كلمة المرور</label><input id="password" name="password" dir="ltr" type="password" autocomplete="current-password" placeholder="أدخل كلمة المرور" required></div>
+            <button id="loginBtn" class="btn primary login-submit" type="submit">دخول لوحة الإدارة <span aria-hidden="true">←</span></button>
+          </form>
+          <div id="loginError" role="alert" aria-live="polite"></div>
+          <p class="login-privacy">لن تحتاج لإرسال كلمة مرورك في ChatGPT. تسجيل الدخول يتم عبر Supabase Auth مباشرة.</p>
+        </div>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="dashboard-actions">
+          <div><p class="section-kicker">متابعة الأعمال</p><p id="tabDesc" class="dashboard-subtitle">ملخص سريع للمخزون والطلبات.</p></div>
+          <div class="actions">
+            <span id="status" class="sync-status" role="status"><span class="status-dot"></span> جاري الفحص…</span>
+            <button id="refresh" class="btn" type="button"><span aria-hidden="true">↻</span> تحديث</button>
+            <button id="logout" class="btn ghost" type="button">تسجيل الخروج</button>
+          </div>
+        </div>
+        <div class="demo-banner" role="note">
+          <span class="banner-icon" aria-hidden="true">ⓘ</span>
+          <p><b>وضع العرض التجريبي:</b> الأصناف والأسعار والمؤسسات والعمليات هنا بيانات وهمية. أي استلام أو اعتماد تجريبي يتم حفظه في قاعدة بيانات الـDemo فقط.</p>
+          <span class="demo-label">DEMO DATA</span>
+        </div>
+        <div id="hero" class="hero">
+          <div class="hero-content">
+            <span class="hero-kicker"><span class="hero-dot"></span> لوحة عمليات واحدة</span>
+            <h2>كل حركة مخزون، تحت السيطرة.</h2>
+            <p>تابع الكميات والتشغيلات وتواريخ الصلاحية والمبيعات لحظة بلحظة، في مساحة واضحة وسهلة الاستخدام.</p>
+            <div class="hero-actions">
+              <button id="heroStockBtn" class="btn light" type="button">عرض المخزون <span aria-hidden="true">←</span></button>
+              <button id="heroOrdersBtn" class="btn hero-outline" type="button">أوامر البيع</button>
+            </div>
+          </div>
+          <div class="hero-graphic" aria-hidden="true">
+            <div class="rings ring-one"></div><div class="rings ring-two"></div>
+            <div class="floating-card float-main"><span class="pulse-icon">✚</span><span class="mini-lines"><i></i><i></i></span><span class="mini-chart"><b></b><b></b><b></b><b></b><b></b></span></div>
+            <div class="floating-card float-small"><span class="little-mark">✓</span><span class="small-lines"><i></i><i></i></span></div>
+          </div>
+        </div>
+        <div id="feedback" role="status" aria-live="polite"></div>
+        <main id="content" tabindex="-1"></main>
+        <div class="content-footer"><span id="welcome" class="muted"></span><span>Life Medx · نسخة تجريبية · الحسابات والفواتير قيد التطوير</span></div>
+      </section>
+    </div>
+  </div>
 </div>
-<script type="module" src="assets/js/cloud-demo.js"></script>
+<script type="module" src="assets/js/cloud-demo-v2.js"></script>
 </body>
 </html>
